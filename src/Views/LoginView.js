@@ -11,8 +11,38 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    height: '100vh',
+  },
+
+  paper: {
+    margin: theme.spacing(8, 4),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+    padding: '5px 40px',
+    backgroundColor: 'rgb(184, 92, 80)',
+    border: 'none',
+    borderRadius: 5,
+    boxShadow: '0px 0px 3px 0px black',
+    cursor: 'pointer',
+  },
+}));
+
 export default function LoginView() {
-  const classes = useStyles();
+  const s = useStyles();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,16 +66,16 @@ export default function LoginView() {
   };
 
   return (
-    <Grid container component="main" className={classes.root}>
+    <Grid container component="main" className={s.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+      <Grid item xs={false} sm={4} md={7} className={s.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
+        <div className={s.paper}>
+          <Avatar className={s.avatar}>
             <LockOutlinedIcon />
           </Avatar>
 
-          <form className={classes.form} onSubmit={handleSubmit} noValidate>
+          <form className={s.form} onSubmit={handleSubmit} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
@@ -77,7 +107,7 @@ export default function LoginView() {
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.submit}
+              className={s.submit}
             >
               Sign in
             </Button>
