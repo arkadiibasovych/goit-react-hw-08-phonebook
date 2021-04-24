@@ -11,7 +11,7 @@ const s = {
     color: '#2A363B',
   },
   activeLink: {
-    color: '#E84A5F',
+    color: 'tomato',
   },
 };
 

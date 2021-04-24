@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../redux/user/user-operations';
 
-import Paper from '@material-ui/core/Paper';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Avatar from '@material-ui/core/Avatar';
@@ -13,31 +12,37 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    display: 'flex',
+    justifyContent: 'center',
     height: '100vh',
   },
-
   paper: {
-    margin: theme.spacing(8, 4),
+    margin: theme.spacing(8, 8),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: 'tomato',
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%',
     marginTop: theme.spacing(1),
   },
   submit: {
+    color: 'black',
     margin: theme.spacing(3, 0, 2),
     padding: '5px 40px',
-    backgroundColor: 'rgb(184, 92, 80)',
+    backgroundColor: '#fff',
     border: 'none',
     borderRadius: 5,
     boxShadow: '0px 0px 3px 0px black',
     cursor: 'pointer',
+    '&:hover': {
+      color: '#fff',
+      backgroundColor: 'tomato',
+    },
   },
 }));
 
@@ -68,8 +73,8 @@ export default function LoginView() {
   return (
     <Grid container component="main" className={s.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={s.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+
+      <Grid md={5}>
         <div className={s.paper}>
           <Avatar className={s.avatar}>
             <LockOutlinedIcon />
@@ -88,6 +93,8 @@ export default function LoginView() {
               autoFocus
               value={email}
               onChange={handleChange}
+              className={s.label}
+              activeClass={s.activeLabel}
             />
             <TextField
               variant="outlined"

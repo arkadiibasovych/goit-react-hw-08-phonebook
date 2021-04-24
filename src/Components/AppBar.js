@@ -9,12 +9,14 @@ import AppBar1 from '@material-ui/core/AppBar';
 
 const useStyles = makeStyles(theme => ({
   header: {
+    marginLeft: 50,
+    marginRight: 50,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   app: {
-    backgroundColor: '#f8ab8d',
+    backgroundColor: '#fff',
   },
 }));
 

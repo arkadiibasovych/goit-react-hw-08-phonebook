@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-const styles = {
+const s = {
   link: {
     display: 'inline-block',
     textDecoration: 'none',
@@ -9,27 +9,17 @@ const styles = {
     color: '#2A363B',
   },
   activeLink: {
-    color: '#E84A5F',
+    color: 'tomato',
   },
 };
 
 export default function AuthNav() {
   return (
     <div>
-      <NavLink
-        to="/register"
-        exact
-        style={styles.link}
-        activeStyle={styles.activeLink}
-      >
+      <NavLink to="/register" exact style={s.link} activeStyle={s.activeLink}>
         Registartion
       </NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={styles.link}
-        activeStyle={styles.activeLink}
-      >
+      <NavLink to="/login" exact style={s.link} activeStyle={s.activeLink}>
         Login
       </NavLink>
     </div>

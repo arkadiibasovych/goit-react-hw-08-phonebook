@@ -13,8 +13,9 @@ const s = {
     color: 'black',
   },
   button: {
+    color: 'black',
     padding: '5px 40px',
-    backgroundColor: 'rgb(184, 92, 80)',
+    backgroundColor: '#fff',
     border: 'none',
     borderRadius: 5,
     boxShadow: '0px 0px 3px 0px black',
